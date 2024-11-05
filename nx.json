@@ -47,5 +47,12 @@
     "version": {
       "preVersionCommand": "npx nx run-many -t build"
     }
+  },
+  "targetDefaults": {
+    "@nx/vite:build": {
+      "cache": true,
+      "dependsOn": ["^build"],
+      "inputs": ["production", "^production"]
+    }
   }
 }
